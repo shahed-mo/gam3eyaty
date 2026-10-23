@@ -1,36 +1,42 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Gam3eyaty (جمعيتي)
 
-## Getting Started
+A simple web app to manage monthly savings circles (gam3eyat): see whose turn it is and track who has paid.
 
-First, run the development server:
+## Features
+
+- Create a circle with a name, monthly amount, number of members, and start date
+- A card for each month showing who receives and how many have paid
+- Mark payments with one tap: Paid, Pending, or Late
+- Sign up and sign in with Clerk
+- Arabic, right-to-left interface
+
+## Built with
+
+Next.js, React, Tailwind CSS, Clerk
+
+## Run it locally
+
+```bash
+git clone https://github.com/YOUR_USERNAME/gam3eyaty.git
+cd gam3eyaty
+npm install
+```
+
+Create a `.env.local` file with your Clerk keys:
+
+```
+NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=your_publishable_key
+CLERK_SECRET_KEY=your_secret_key
+```
+
+Then start it:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open http://localhost:3000
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## Note
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Circles are saved in the browser (`localStorage`), so they stay on the device they were created on.
